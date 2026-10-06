@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Govnokosilka G1 Detect™ | The lawn mower that makes smoothies</title>
+<meta name="description" content="Govnokosilka G1 Detect™ — detects, collects and cold-presses dog poo into vegan smoothies. Engineered to pick up after everyone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Chakra+Petch:wght@500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Cpath d='M18 74Q18 62 32 60L68 60Q82 62 82 74Q82 82 50 82Q18 82 18 74ZM28 60Q28 48 40 46L60 46Q72 48 72 60Q72 64 50 64Q28 64 28 60ZM38 46Q38 34 50 32Q62 34 62 46Z' fill='%2379b928'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#333; --ink-2:#666; --black:#000; --white:#fff;
+    --grey:#f3f3f3; --grey-2:#ebebeb; --line:#dcdcdc; --mute:#b2b3b4;
+    --green:#79b928; --green-h:#6aa61f; --laser:#9dff3a;
+    --acc:#7b4fd6; --acc2:#c27a4a; --smoothie:#9a6b3a;
+    --ease:cubic-bezier(.25,.1,.25,1);
+    --wrap:1270px; --gutter:50px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Jost","Futura","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  button{font:inherit;cursor:pointer}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+  .stat,.mono{font-family:"Chakra Petch","Jost",monospace}
+  sup{font-size:.55em;line-height:0;vertical-align:super}
+  sup a{text-decoration:none}
+  h1,h2,h3,h4{font-weight:300;letter-spacing:-.01em;line-height:1.12}
+  .eyebrow{font-size:14px;font-weight:500;letter-spacing:.02em;color:var(--ink-2);margin-bottom:12px}
+  .on-dark .eyebrow{color:#9a9a9a}
+  .pill{display:inline-block;font-size:12px;font-weight:500;padding:3px 10px;border:1px solid currentColor;border-radius:9999px;letter-spacing:.02em}
+  .pill.new{color:var(--green);}
+
+  /* Buttons — square, with the ripple */
+  .btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 28px;border:0;border-radius:0;font-weight:500;font-size:16px;text-decoration:none;transition:background .3s var(--ease),color .3s var(--ease);isolation:isolate}
+  .btn::before{content:"";position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px;border-radius:50%;background:rgba(255,255,255,.18);transform:scale(0);transition:transform .5s ease-out;z-index:-1}
+  .btn:hover::before{transform:scale(14)}
+  .btn-green{background:var(--green);color:#000}
+  .btn-green:hover{background:var(--green-h)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark:hover{background:#292929}
+  .btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+  .btn-ghost.ink{color:var(--ink);box-shadow:inset 0 0 0 1px var(--mute)}
+  .btn-ghost::before{background:rgba(255,255,255,.08)}
+  .btn-ghost.ink::before{background:rgba(0,0,0,.05)}
+  .link{font-weight:500;text-decoration:underline;text-underline-offset:4px}
+  :focus-visible{outline:2px solid #66afe9;outline-offset:2px}
+
+  /* Promo strip + header */
+  .promo{background:var(--grey-2);font-size:13px;text-align:center;padding:8px 16px;color:var(--ink)}
+  header.top{position:sticky;top:0;z-index:50;background:#000;color:#fff;height:64px}
+  header.top .wrap{display:flex;align-items:center;height:64px;gap:28px}
+  .burger{background:none;border:0;color:#fff;width:24px;height:24px;display:grid;place-items:center}
+  .logo{font-weight:500;font-size:26px;letter-spacing:-.03em;text-decoration:none;color:#fff;line-height:1}
+  .logo b{color:var(--green);font-weight:500}
+  nav.main{display:flex;gap:26px;font-size:15px}
+  nav.main a{text-decoration:none;opacity:.85}
+  nav.main a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+  .hdr-r{margin-left:auto;display:flex;align-items:center;gap:20px}
+  .bag{position:relative;background:none;border:0;color:#fff}
+  .bag i{position:absolute;top:-6px;right:-9px;background:var(--green);color:#000;font-style:normal;font-size:11px;font-weight:600;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;transform:scale(0);transition:transform .3s var(--ease)}
+  .bag i.on{transform:scale(1)}
+
+  /* Sticky product bar */
+  .pbar{position:sticky;top:64px;z-index:40;background:#222;color:#fff;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform .3s var(--ease),opacity .3s var(--ease);height:0}
+  .pbar.show{transform:none;opacity:1;pointer-events:auto}
+  .pbar-in{display:flex;align-items:center;height:56px;background:#222}
+  .pbar-in .wrap{display:flex;align-items:center;width:100%;gap:16px}
+  .pbar .name{font-size:14px}
+  .pbar .name span{color:#aaa}
+  .pbar .btn{margin-left:auto;min-height:56px;padding:0 64px}
+
+  /* Hero */
+  .hero{background:#000;color:#fff;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:5fr 7fr;align-items:center;min-height:640px;gap:20px;padding-top:40px}
+  .hero h1{font-size:clamp(44px,6vw,76px);line-height:1;margin:14px 0 6px}
+  .hero h1 small{display:block;font-size:.42em;letter-spacing:0;color:#bbb;margin-top:10px}
+  .hero p.lede{font-size:19px;font-weight:300;color:#d0d0d0;max-width:440px;margin:22px 0 30px}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .meta{display:flex;gap:18px;margin-top:28px;font-size:13px;color:#999;flex-wrap:wrap}
+  .stars{color:#ffcc01;letter-spacing:2px}
+  .hero-art{position:relative;align-self:end}
+  .hero-art svg{width:100%;height:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 94%,transparent)}
+  .poo-run{animation:slurp 5s var(--ease) infinite;transform-box:fill-box;transform-origin:center bottom}
+  @keyframes slurp{
+    0%,38%{transform:translate(0,0) scale(1);opacity:1}
+    62%{transform:translate(190px,-30px) scale(.15);opacity:0}
+    90%{transform:translate(0,0) scale(.4);opacity:0}
+    100%{transform:translate(0,0) scale(1);opacity:1}
+  }
+  .plus1{animation:plus 5s var(--ease) infinite;opacity:0}
+  @keyframes plus{0%,58%{opacity:0;transform:translateY(10px)}66%{opacity:1;transform:translateY(0)}86%{opacity:1;transform:translateY(-14px)}94%,100%{opacity:0;transform:translateY(-20px)}}
+  .laser-flicker{animation:flick 2.4s linear infinite}
+  @keyframes flick{0%,100%{opacity:.85}50%{opacity:1}52%{opacity:.6}54%{opacity:1}}
+  .dog-bg{animation:dogbob 5s ease-in-out infinite;transform-box:fill-box;transform-origin:bottom}
+  @keyframes dogbob{0%,30%{transform:scaleY(1)}40%,55%{transform:scaleY(.96)}65%,100%{transform:scaleY(1)}}
+
+  /* Generic sections */
+  section{position:relative;scroll-margin-top:120px}
+  .sec{padding:110px 0}
+  .sec.grey{background:var(--grey)}
+  .sec.black{background:#000;color:#fff}
+  .sec h2{font-size:clamp(32px,4vw,48px)}
+  .sec .sub{font-size:19px;font-weight:300;color:var(--ink-2);max-width:640px;margin-top:18px}
+  .on-dark .sub{color:#bdbdbd}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+
+  /* Fig 1 — dog drawing */
+  .fig{background:#fff;border:1px solid var(--line);padding:24px 24px 18px;position:relative}
+  .fig figcaption{font-size:13px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:12px;margin-top:8px;display:flex;justify-content:space-between;gap:12px}
+  .fly{animation:buzz 1.6s linear infinite;transform-box:fill-box;transform-origin:center}
+  .fly.b{animation-duration:2.1s;animation-direction:reverse}
+  .fly.c{animation-duration:1.3s}
+  @keyframes buzz{0%{transform:translate(0,0) rotate(0)}25%{transform:translate(14px,-10px) rotate(20deg)}50%{transform:translate(4px,-22px) rotate(-10deg)}75%{transform:translate(-12px,-8px) rotate(15deg)}100%{transform:translate(0,0) rotate(0)}}
+  .wing{animation:flap .08s linear infinite alternate;transform-box:fill-box;transform-origin:bottom}
+  @keyframes flap{to{transform:scaleY(.4)}}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;margin-top:40px}
+  .facts .stat{font-size:44px;font-weight:500;letter-spacing:-.04em;line-height:1}
+  .facts p{font-size:14px;color:var(--ink-2);margin-top:6px}
+
+  /* Stats band */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #333}
+  .stats>div{padding:40px 28px 10px 0;border-right:1px solid #333;margin-right:28px}
+  .stats>div:last-child{border-right:0;margin-right:0}
+  .stats .stat{font-size:clamp(44px,5.4vw,72px);font-weight:500;letter-spacing:-.05em;line-height:1}
+  .stats .stat small{font-size:.4em;letter-spacing:0;margin-left:4px}
+  .stats p{color:#aaa;font-size:14px;margin-top:12px;max-width:220px}
+
+  /* Cutaway */
+  .cutaway{position:relative;margin-top:60px}
+  .cutaway svg{width:100%;height:auto}
+  .callout text{font-family:"Jost",sans-serif;font-size:15px;fill:#fff}
+  .callout text.s{font-size:12.5px;fill:#9a9a9a}
+  .callout circle{fill:#000;stroke:#fff;stroke-width:1.5}
+  .legend{display:none;list-style:none;gap:14px;margin-top:24px;grid-template-columns:1fr}
+  .legend li{border-top:1px solid #333;padding-top:12px;font-size:15px}
+  .legend li span{display:block;color:#9a9a9a;font-size:13px}
+  .callout line,.callout polyline{stroke:#777;stroke-width:1;fill:none}
+
+  /* Tech grid */
+  .tech{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+  .tech article{background:#fff;padding:34px 30px 38px}
+  .tech .ico{width:44px;height:44px;margin-bottom:22px}
+  .tech h3{font-size:22px;font-weight:400;margin-bottom:10px}
+  .tech p{font-size:15px;color:var(--ink-2)}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:60px;counter-reset:s}
+  .steps li{list-style:none;padding:0 22px 0 0;position:relative}
+  .steps .n{font-family:"Chakra Petch";font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .steps .n::after{content:"";flex:1;height:1px;background:var(--line)}
+  .steps svg{width:72px;height:72px;margin-bottom:18px}
+  .steps h4{font-size:20px;font-weight:400;margin-bottom:6px}
+  .steps p{font-size:14px;color:var(--ink-2)}
+
+  /* LCD */
+  .lcd{background:#0b0b0d;border-radius:28px;padding:26px 28px;color:#e8e8e8;box-shadow:inset 0 0 0 10px #1c1c20, inset 0 0 0 12px #3a3a40;max-width:520px;margin-left:auto;font-family:"Chakra Petch",monospace}
+  .lcd-top{display:flex;justify-content:space-between;font-size:12px;color:#8b8b8b;padding:4px 6px 14px}
+  .lcd-top b{color:var(--laser);font-weight:500}
+  .bars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;height:190px;padding:0 6px}
+  .bar{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .bar .v{font-size:22px;margin-bottom:6px}
+  .bar .f{width:100%;border-radius:4px 4px 0 0;transition:height .6s var(--ease)}
+  .bar:nth-child(1) .f{background:#c4398d}
+  .bar:nth-child(2) .f{background:#7b4fd6}
+  .bar:nth-child(3) .f{background:#ffcc01}
+  .bar:nth-child(4) .f{background:var(--laser)}
+  .bar-l{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:10px 6px 0;font-size:11px;color:#8b8b8b;text-align:center;border-top:1px solid #2a2a2e;margin-top:6px}
+  .lcd-foot{display:flex;justify-content:space-between;align-items:center;padding:18px 6px 4px;font-size:13px}
+  .lcd-foot .big{font-size:34px;color:#fff}
+  .batt{display:flex;gap:3px}
+  .batt i{width:9px;height:16px;background:var(--laser);border-radius:2px}
+  .batt i:last-child{opacity:.25}
+
+  /* Flavours */
+  .flav{display:grid;grid-template-columns:6fr 6fr;gap:60px;align-items:center}
+  .glass-stage{background:linear-gradient(180deg,#fff 70%,#e6e6e6 70.4%,#f7f7f7);aspect-ratio:5/4;display:grid;grid-template-columns:1.5fr 1fr;align-items:end;padding:30px 30px 8%;gap:0}
+  .glass-stage svg{width:100%;height:auto}
+  .liquid,.smoothie-fill{fill:var(--smoothie);transition:fill .5s var(--ease)}
+  .swatches{display:flex;gap:14px;margin:26px 0 8px;flex-wrap:wrap}
+  .sw{width:46px;height:46px;border-radius:50%;border:0;padding:0;position:relative;background:linear-gradient(135deg,var(--a) 50%,var(--b) 50%)}
+  .sw::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid transparent;transition:border-color .2s}
+  .sw[aria-pressed="true"]::after{border-color:var(--ink)}
+  .flav-name{font-size:28px;font-weight:300;margin-top:6px}
+  .flav-cw{font-size:14px;color:var(--ink-2)}
+  .flav-notes{margin-top:22px;border-top:1px solid var(--line)}
+  .flav-notes div{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .flav-notes div span:last-child{color:var(--ink-2);text-align:right}
+
+  /* Science */
+  .chart{margin-top:40px;border-left:1px solid #444;border-bottom:1px solid #444;padding:20px 0 0 0;display:grid;gap:22px}
+  .crow{display:grid;grid-template-columns:200px 1fr;align-items:center;gap:16px;font-size:14px;color:#bbb}
+  .ctrack{height:34px;position:relative}
+  .cfill{height:100%;background:#3a3a40;width:0;transition:width 1.4s var(--ease);display:flex;align-items:center;justify-content:flex-end;padding-right:10px;font-family:"Chakra Petch";color:#fff;font-size:15px;min-width:max-content}
+  .cfill.us{background:var(--green);color:#000}
+  .seal{width:190px;height:190px;margin:0 auto}
+  .seal-spin{animation:spin 28s linear infinite;transform-origin:100px 100px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Models */
+  .models{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+  .card{border:1px solid var(--line);border-radius:4px 4px 0 0;background:#fff;display:flex;flex-direction:column}
+  .card .img{background:var(--grey);aspect-ratio:4/3;display:grid;place-items:center;padding:20px 10px 0;position:relative}
+  .card .img .pill{position:absolute;top:14px;left:14px;background:#fff;border-color:var(--line);color:var(--ink)}
+  .card .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .card h3{font-size:22px;font-weight:400}
+  .card .desc{font-size:14px;color:var(--ink-2);margin:6px 0 16px}
+  .card ul{list-style:none;font-size:14px;margin-bottom:22px}
+  .card li{padding:7px 0 7px 24px;border-top:1px solid var(--grey-2);position:relative}
+  .card li::before{content:"";position:absolute;left:2px;top:13px;width:10px;height:6px;border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+  .card li.no{color:var(--mute)}
+  .card li.no::before{border:0;height:2px;background:var(--mute);top:16px;transform:none}
+  .price{font-size:26px;font-weight:400;margin-top:auto}
+  .price s{font-size:15px;color:var(--mute);margin-left:8px}
+  .card .btn{width:100%;margin-top:14px}
+
+  /* Specs */
+  .specs{margin-top:44px;border-top:1px solid var(--ink)}
+  .specs div{display:grid;grid-template-columns:1fr 1fr;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px;gap:20px}
+  .specs dt{color:var(--ink-2)}
+  .specs dd{font-weight:500}
+
+  /* Reviews */
+  .rv-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .rv-score{display:flex;align-items:center;gap:18px}
+  .rv-score .stat{font-size:64px;font-weight:500;letter-spacing:-.05em;line-height:1}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px}
+  .review{background:#fff;border:1px solid var(--line);padding:26px}
+  .review h4{font-size:20px;font-weight:400;margin:10px 0}
+  .review p{font-size:15px;color:var(--ink-2)}
+  .review .who{font-size:13px;margin-top:18px;display:flex;gap:8px;align-items:center;color:var(--ink)}
+  .verified{font-size:11px;background:var(--grey-2);padding:2px 8px;border-radius:9999px;color:var(--ink-2)}
+
+  /* FAQ */
+  .faq{margin-top:40px;border-top:1px solid var(--ink)}
+  .faq details{border-bottom:1px solid var(--line)}
+  .faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-size:19px;font-weight:400;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"";position:absolute;right:6px;top:30px;width:10px;height:10px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:rotate(45deg);transition:transform .3s var(--ease)}
+  .faq details[open] summary::after{transform:rotate(-135deg);top:34px}
+  .faq details p{padding:0 40px 24px 0;color:var(--ink-2);max-width:760px}
+
+  /* Waitlist */
+  .wl{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .wl form{display:flex;gap:0;margin-top:26px;max-width:520px}
+  .wl input{flex:1;height:52px;border:1px solid #555;background:#111;color:#fff;padding:0 16px;font:inherit;border-radius:0;border-right:0;min-width:0}
+  .wl input::placeholder{color:#888}
+  .wl .btn{min-height:52px}
+  .wl .ok{margin-top:14px;color:var(--laser);font-size:14px;min-height:21px}
+  .wl small{display:block;color:#888;font-size:12px;margin-top:10px;max-width:520px}
+
+  /* Footer */
+  footer{background:#000;color:#bbb;padding:70px 0 40px;font-size:14px;border-top:1px solid #222}
+  .fcols{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:30px}
+  footer h5{color:#fff;font-size:14px;font-weight:500;margin-bottom:14px}
+  footer ul{list-style:none}
+  footer li{padding:4px 0}
+  footer a{text-decoration:none}
+  footer a:hover{text-decoration:underline;color:#fff}
+  .notes{border-top:1px solid #222;margin-top:50px;padding-top:24px;font-size:12px;color:#777;display:grid;gap:6px}
+  .notes ol{padding-left:18px;display:grid;gap:4px}
+  .disclaimer{margin-top:16px;color:#999;border:1px solid #333;padding:14px 16px;font-size:12px}
+  .legal{display:flex;justify-content:space-between;margin-top:30px;font-size:12px;color:#777;flex-wrap:wrap;gap:12px}
+
+  /* Modal */
+  .modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:16px}
+  .modal.open{display:flex}
+  .dialog{background:#fff;max-width:520px;width:100%;padding:36px 32px 30px;position:relative;animation:pop .35s var(--ease)}
+  @keyframes pop{from{opacity:0;transform:translateY(16px)}}
+  .dialog h3{font-size:30px}
+  .dialog p{color:var(--ink-2);margin:10px 0 20px}
+  .dialog .x{position:absolute;top:14px;right:14px;background:none;border:0;font-size:26px;line-height:1;color:var(--ink);width:40px;height:40px}
+  .opts{display:grid;gap:10px;margin-bottom:18px}
+  .opts label{display:flex;align-items:center;gap:12px;border:1px solid var(--line);padding:14px 16px;cursor:pointer;font-size:15px}
+  .opts label:has(input:checked){border-color:var(--ink)}
+  .opts input{accent-color:var(--ink);width:18px;height:18px}
+  .opts span{margin-left:auto;color:var(--ink-2)}
+  .dialog input[type=email]{width:100%;height:50px;border:1px solid var(--mute);padding:0 14px;font:inherit;margin-bottom:12px;border-radius:0}
+  .dialog .btn{width:100%}
+  .done{text-align:center;padding:20px 0}
+  .done svg{width:80px;margin:0 auto 18px}
+
+  /* Toast */
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120px);background:#222;color:#fff;padding:14px 22px;font-size:14px;z-index:120;transition:transform .4s var(--ease);display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+  .toast.show{transform:translate(-50%,0)}
+
+  /* Reveal */
+  .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+  }
+
+  /* Responsive */
+  @media (max-width:1080px){
+    nav.main{display:none}
+    .tech{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:repeat(3,1fr);row-gap:40px}
+    .fcols{grid-template-columns:1fr 1fr 1fr}
+    .fcols>div:first-child{grid-column:1/-1}
+  }
+  @media (max-width:860px){
+    :root{--gutter:16px}
+    .hero .wrap{grid-template-columns:1fr;min-height:0;padding-top:48px}
+    .split,.flav,.wl{grid-template-columns:1fr;gap:40px}
+    .stats{grid-template-columns:1fr 1fr}
+    .stats>div:nth-child(2){border-right:0;margin-right:0}
+    .models,.reviews{grid-template-columns:1fr}
+    .sec{padding:72px 0}
+    .lcd{margin:0 auto}
+    .glass-stage{aspect-ratio:auto;padding:40px 16px 24px}
+    .crow{grid-template-columns:1fr;gap:6px}
+    .pbar .name span{display:none}
+    .pbar .btn{padding:0 22px}
+    .cutaway .callout{display:none}
+    .legend{display:grid!important}
+    .pbar .name{font-size:12px;line-height:1.3}
+    .pbar .btn{white-space:nowrap;padding:0 16px;font-size:14px}
+  }
+  @media (max-width:560px){
+    .tech{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .facts{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr}
+    .stats>div{border-right:0;margin-right:0;border-bottom:1px solid #333;padding-bottom:30px}
+    .fcols{grid-template-columns:1fr 1fr}
+    .wl form{flex-direction:column}
+    .wl input{border-right:1px solid #555;border-bottom:0}
+    .logo{font-size:22px}
+    .bars{height:150px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SVG LIBRARY ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="nickel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f5f6"/><stop offset=".48" stop-color="#bfc4ca"/>
+      <stop offset=".5" stop-color="#8e949b"/><stop offset="1" stop-color="#dde0e4"/>
+    </linearGradient>
+    <linearGradient id="deck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b4b53"/><stop offset=".15" stop-color="#36363c"/><stop offset="1" stop-color="#18181b"/>
+    </linearGradient>
+    <linearGradient id="laserGrad" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#c6ff7a" stop-opacity=".95"/><stop offset="1" stop-color="#9dff3a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pooGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8c5a2b"/><stop offset="1" stop-color="#4a2a10"/>
+    </linearGradient>
+    <linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d3a12"/><stop offset="1" stop-color="#050a03"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#9dff3a" stop-opacity=".55"/><stop offset="1" stop-color="#9dff3a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grass" width="14" height="22" patternUnits="userSpaceOnUse">
+      <path d="M2 22 Q3 12 1 4 M6 22 Q7 10 9 2 M11 22 Q10 14 13 7" stroke="#2f5a1c" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+    </pattern>
+
+    <!-- A dog poo -->
+    <symbol id="poo" viewBox="0 0 100 100">
+      <path d="M6 82 Q6 64 26 62 L74 62 Q94 64 94 82 Q94 94 50 94 Q6 94 6 82Z" fill="url(#pooGrad)"/>
+      <path d="M18 63 Q18 46 34 44 L66 44 Q82 46 82 63 Q82 72 50 72 Q18 72 18 63Z" fill="url(#pooGrad)"/>
+      <path d="M29 45 Q29 30 44 28 Q57 27 61 34 Q71 38 69 46 Q67 53 50 53 Q29 53 29 45Z" fill="url(#pooGrad)"/>
+      <path d="M47 31 Q44 16 58 9 Q55 20 62 31Z" fill="#7a4b22"/>
+      <path d="M16 74 Q30 68 46 70" stroke="#c48a52" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>
+      <path d="M27 54 Q38 49 52 51" stroke="#c48a52" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55"/>
+      <path d="M37 36 Q44 32 52 33" stroke="#c48a52" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".55"/>
+    </symbol>
+
+    <!-- A fly -->
+    <symbol id="fly" viewBox="0 0 20 16">
+      <ellipse class="wing" cx="7" cy="5" rx="4" ry="5" fill="#cfe3ff" opacity=".7"/>
+      <ellipse class="wing" cx="13" cy="5" rx="4" ry="5" fill="#cfe3ff" opacity=".7"/>
+      <ellipse cx="10" cy="10" rx="5" ry="4" fill="#222"/>
+      <circle cx="14.5" cy="9" r="2.4" fill="#5a1010"/>
+    </symbol>
+
+    <!-- A dog in the squat position. Facing right. -->
+    <symbol id="dog" viewBox="0 0 500 400">
+      <g fill="currentColor">
+        <path d="M150 240 Q108 200 120 146" stroke="currentColor" stroke-width="15" stroke-linecap="round" fill="none"/>
+        <ellipse cx="255" cy="236" rx="102" ry="50" transform="rotate(-14 255 236)"/>
+        <ellipse cx="182" cy="268" rx="52" ry="48"/>
+        <path d="M150 284 Q138 322 168 334 L226 335 Q236 334 232 324 L210 320 Q200 302 214 282Z"/>
+        <path d="M314 236 L306 330 Q306 336 314 336 L332 336 Q336 330 330 326 L342 246Z"/>
+        <path d="M342 230 L344 330 Q344 336 352 336 L368 336 Q372 330 364 326 L366 236Z"/>
+        <path d="M296 226 Q312 172 350 164 L382 196 Q352 212 346 252Z"/>
+        <ellipse cx="374" cy="180" rx="35" ry="29"/>
+        <path d="M394 168 Q430 172 436 190 Q434 204 400 204Z"/>
+        <path d="M352 158 Q336 168 342 212 Q358 206 366 176Z" opacity=".75"/>
+      </g>
+      <circle cx="388" cy="174" r="4" fill="var(--eye,#fff)"/>
+      <circle cx="434" cy="186" r="5.5" fill="currentColor"/>
+    </symbol>
+
+    <!-- The Govnokosilka. Facing left. Ground is y=442. -->
+    <symbol id="mower" viewBox="-200 0 800 460">
+      <g style="opacity:var(--laser-on,1)">
+        <polygon points="62,401 -195,430 -195,452 52,446" fill="url(#laserGrad)" opacity=".5"/>
+        <line x1="62" y1="401" x2="-195" y2="441" stroke="#b6ff5c" stroke-width="1.6"/>
+        <circle cx="60" cy="401" r="16" fill="url(#glow)"/>
+      </g>
+      <!-- handle -->
+      <path d="M482 300 L556 72" stroke-width="16" stroke-linecap="round" fill="none" style="stroke:var(--acc2)"/>
+      <path d="M478 298 L551 72" stroke-width="3" stroke="rgba(255,255,255,.35)" fill="none" stroke-linecap="round"/>
+      <rect x="520" y="52" width="72" height="24" rx="12" fill="#1e1e22" transform="rotate(18 556 64)"/>
+      <rect x="548" y="76" width="10" height="22" rx="4" style="fill:var(--acc)" transform="rotate(18 553 87)"/>
+      <rect x="479" y="214" width="40" height="64" rx="8" style="fill:var(--acc)" transform="rotate(18 499 246)"/>
+      <rect x="484" y="226" width="30" height="4" rx="2" fill="rgba(255,255,255,.35)" transform="rotate(18 499 246)"/>
+      <g transform="translate(523 168) rotate(18)">
+        <rect x="-32" y="-22" width="64" height="44" rx="9" fill="url(#nickel)"/>
+        <rect x="-27" y="-17" width="54" height="34" rx="6" fill="#0a0a0a"/>
+        <rect x="-21" y="2" width="7" height="9" fill="#c4398d"/><rect x="-11" y="-6" width="7" height="17" fill="#7b4fd6"/>
+        <rect x="-1" y="-10" width="7" height="21" fill="#ffcc01"/><rect x="9" y="-2" width="7" height="13" fill="#9dff3a"/>
+      </g>
+      <!-- deck -->
+      <path d="M88 404 L98 336 Q108 298 152 294 L468 294 Q508 296 514 332 L522 378 Q524 404 496 406 Z" fill="url(#deck)"/>
+      <path d="M100 330 Q110 300 152 297 L468 297 Q504 299 511 330" stroke="rgba(255,255,255,.22)" stroke-width="2" fill="none"/>
+      <rect x="104" y="318" width="410" height="7" rx="3.5" style="fill:var(--acc2)"/>
+      <g fill="#0c0c0e" opacity=".75">
+        <rect x="200" y="352" width="20" height="5" rx="2.5"/><rect x="228" y="352" width="20" height="5" rx="2.5"/>
+        <rect x="256" y="352" width="20" height="5" rx="2.5"/><rect x="284" y="352" width="20" height="5" rx="2.5"/>
+        <rect x="200" y="364" width="20" height="5" rx="2.5"/><rect x="228" y="364" width="20" height="5" rx="2.5"/>
+        <rect x="256" y="364" width="20" height="5" rx="2.5"/><rect x="284" y="364" width="20" height="5" rx="2.5"/>
+      </g>
+      <text x="202" y="392" font-family="Jost,sans-serif" font-size="12" font-weight="500" letter-spacing="3" fill="#9a9aa2">G1 DETECT</text>
+      <!-- Scat-Scan head -->
+      <path d="M50 412 L86 362 Q92 354 104 354 L126 354 L122 414 Q122 418 116 418 L56 418 Q48 418 50 412Z" style="fill:var(--acc)"/>
+      <path d="M60 408 L90 366" stroke="rgba(255,255,255,.3)" stroke-width="2"/>
+      <rect x="54" y="396" width="13" height="10" rx="2" fill="#c6ff7a"/>
+      <!-- NutriBlend chamber -->
+      <rect x="158" y="206" width="82" height="88" rx="10" fill="url(#nickel)"/>
+      <rect x="168" y="218" width="62" height="64" rx="6" fill="#111"/>
+      <rect x="168" y="246" width="62" height="36" rx="0" class="smoothie-fill"/>
+      <path d="M168 246 Q184 240 199 246 T230 246" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"/>
+      <path d="M190 270 L208 262 M190 262 L208 270" stroke="#ddd" stroke-width="3" stroke-linecap="round"/>
+      <rect x="164" y="212" width="70" height="4" rx="2" style="fill:var(--acc)"/>
+      <!-- dispenser + cup -->
+      <path d="M160 230 L134 230 Q124 230 124 240 L124 248" stroke="#b9bec4" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <ellipse cx="124" cy="256" rx="3" ry="4" class="smoothie-fill"/>
+      <rect x="96" y="296" width="64" height="6" rx="3" style="fill:var(--acc2)"/>
+      <path d="M140 260 L156 226" stroke-width="4" stroke-linecap="round" style="stroke:var(--acc)"/>
+      <path d="M104 262 L148 262 L143 296 L109 296Z" class="smoothie-fill"/>
+      <path d="M102 254 L150 254 L144 296 L108 296Z" fill="rgba(255,255,255,.14)" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/>
+      <path d="M108 262 L111 290" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+      <!-- Poo-clone bin -->
+      <rect x="248" y="128" width="104" height="166" rx="12" fill="rgba(220,235,255,.12)" stroke="rgba(255,255,255,.55)" stroke-width="2"/>
+      <path d="M250 238 Q275 224 300 238 T350 238 L350 282 Q350 292 340 292 L260 292 Q250 292 250 282Z" fill="#5b3518"/>
+      <path d="M262 258 Q300 246 338 262 M266 274 Q300 264 334 278" stroke="#8c5a2b" stroke-width="3" fill="none" opacity=".8"/>
+      <path d="M284 140 L316 140 L308 226 L292 226Z" fill="rgba(255,255,255,.16)"/>
+      <path d="M262 150 Q300 170 338 150 M262 178 Q300 198 338 178 M262 206 Q300 226 338 206" stroke="rgba(255,255,255,.2)" stroke-width="1.5" fill="none"/>
+      <rect x="244" y="104" width="112" height="26" rx="6" fill="url(#nickel)"/>
+      <g style="fill:var(--acc)">
+        <path d="M252 104 L266 104 L262 84 L256 84Z"/><path d="M270 104 L284 104 L280 84 L274 84Z"/>
+        <path d="M288 104 L302 104 L298 84 L292 84Z"/><path d="M306 104 L320 104 L316 84 L310 84Z"/>
+        <path d="M324 104 L338 104 L334 84 L328 84Z"/><path d="M342 104 L352 104 L350 86 L345 86Z"/>
+      </g>
+      <ellipse cx="300" cy="82" rx="54" ry="7" fill="url(#nickel)"/>
+      <!-- Hyperdoodium motor -->
+      <rect x="362" y="196" width="66" height="98" rx="10" fill="url(#nickel)"/>
+      <rect x="362" y="230" width="66" height="8" style="fill:var(--acc)"/>
+      <g stroke="#7d838a" stroke-width="2"><line x1="374" y1="250" x2="374" y2="284"/><line x1="386" y1="250" x2="386" y2="284"/><line x1="398" y1="250" x2="398" y2="284"/><line x1="410" y1="250" x2="410" y2="284"/></g>
+      <!-- wheels -->
+      <circle cx="430" cy="380" r="62" fill="#131315"/>
+      <circle cx="430" cy="380" r="56" fill="none" stroke="#2b2b30" stroke-width="5" stroke-dasharray="6 5"/>
+      <circle cx="430" cy="380" r="40" fill="url(#nickel)"/>
+      <circle cx="430" cy="380" r="30" fill="#2a2a2e"/>
+      <circle cx="430" cy="380" r="14" style="fill:var(--acc)"/>
+      <g fill="#8e949b"><circle cx="430" cy="358" r="3"/><circle cx="451" cy="373" r="3"/><circle cx="443" cy="398" r="3"/><circle cx="417" cy="398" r="3"/><circle cx="409" cy="373" r="3"/></g>
+      <circle cx="158" cy="410" r="32" fill="#131315"/>
+      <circle cx="158" cy="410" r="21" fill="url(#nickel)"/>
+      <circle cx="158" cy="410" r="8" style="fill:var(--acc)"/>
+    </symbol>
+
+    <!-- A smoothie glass -->
+    <symbol id="glass" viewBox="0 0 200 320">
+      <path d="M118 70 L160 6" stroke-width="9" stroke-linecap="round" style="stroke:var(--acc,#7b4fd6)"/>
+      <path d="M40 96 L160 96 L148 300 Q147 312 135 312 L65 312 Q53 312 52 300Z" class="liquid"/>
+      <path d="M40 96 Q70 86 100 96 T160 96 L159 112 Q130 104 100 112 T41 112Z" fill="#fff" opacity=".35"/>
+      <g fill="#fff" opacity=".18"><circle cx="70" cy="150" r="4"/><circle cx="120" cy="200" r="3"/><circle cx="90" cy="250" r="5"/><circle cx="130" cy="140" r="2.5"/><circle cx="76" cy="220" r="2"/></g>
+      <path d="M30 60 L170 60 L152 302 Q150 318 134 318 L66 318 Q50 318 48 302Z" fill="rgba(255,255,255,.22)" stroke="#9aa0a6" stroke-width="2"/>
+      <path d="M44 74 L58 300" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+      <ellipse cx="100" cy="60" rx="70" ry="7" fill="none" stroke="#9aa0a6" stroke-width="2"/>
+      <path d="M150 62 Q170 34 186 48 Q176 72 150 62Z" fill="#3c8a2e"/>
+      <path d="M150 62 Q166 48 182 50" stroke="#2a6a1f" stroke-width="1.5" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="promo">Free next-day delivery. Free first smoothie. Free cure for cancer.<sup><a href="#n1">1</a></sup> &nbsp;<a class="link" href="#reserve">Reserve now</a></div>
+
+<header class="top">
+  <div class="wrap">
+    <button class="burger" aria-label="Menu"><svg width="20" height="14" viewBox="0 0 20 14"><path d="M0 1h20M0 7h20M0 13h20" stroke="#fff" stroke-width="1.6"/></svg></button>
+    <a class="logo" href="#">govnokosilka<b>.</b></a>
+    <nav class="main" aria-label="Main">
+      <a href="#technology">Technology</a>
+      <a href="#smoothies">Smoothies</a>
+      <a href="#science">Science</a>
+      <a href="#models">Models</a>
+      <a href="#faq">Support</a>
+    </nav>
+    <div class="hdr-r">
+      <button class="bag" aria-label="Basket"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M3 6h14l-1.4 12H4.4Z M7 6V4.5a3 3 0 0 1 6 0V6" fill="none" stroke="#fff" stroke-width="1.6"/></svg><i id="bagCount">0</i></button>
+    </div>
+  </div>
+</header>
+
+<div class="pbar" id="pbar">
+  <div class="pbar-in"><div class="wrap">
+    <div class="name">Govnokosilka G1 Detect™ lawn mower &amp; smoothie maker <span>· from £749.99 · shipping spring 2027</span></div>
+    <button class="btn btn-green" data-reserve>Reserve now</button>
+  </div></div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="rv">
+      <span class="pill new">New</span>
+      <h1>govnokosilka<br>g1 detect<sup>™</sup>
+        <small>lawn mower · poo collector · smoothie maker</small></h1>
+      <p class="lede">The only lawn mower that detects, collects and cold-presses dog poo into a 100% vegan smoothie. Scientifically proven<sup><a href="#n1">1</a></sup> to cure cancer.</p>
+      <div class="ctas">
+        <button class="btn btn-green" data-reserve>Reserve now</button>
+        <a class="btn btn-ghost" href="#technology">See the engineering</a>
+      </div>
+      <div class="meta"><span><span class="stars">★★★★★</span> 4.9/5 · 12,483 ratings<sup><a href="#n2">2</a></sup></span><span>From £749.99</span><span>2-year warranty</span></div>
+    </div>
+    <div class="hero-art" aria-label="Illustration: the Govnokosilka mower lasering a dog poo on a lawn while a dog squats in the background">
+      <svg viewBox="90 110 910 510" role="img">
+        <defs>
+          <radialGradient id="spot" cx=".6" cy=".6" r=".55"><stop offset="0" stop-color="#2a2a30"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect x="90" y="110" width="910" height="510" fill="url(#spot)"/>
+        <!-- moon-ish rim light -->
+        <ellipse cx="640" cy="560" rx="460" ry="40" fill="#000" opacity=".6"/>
+        <rect y="512" width="1000" height="108" fill="url(#grassGrad)"/>
+        <rect y="498" width="1000" height="26" fill="url(#grass)" opacity=".9"/>
+        <!-- background dog -->
+        <g class="dog-bg" style="color:#1d2a17;--eye:#1d2a17">
+          <use href="#dog" x="96" y="356" width="210" height="168"/>
+        </g>
+        <use href="#poo" x="132" y="494" width="24" height="24" opacity=".6"/>
+        <!-- mower -->
+        <ellipse cx="660" cy="522" rx="300" ry="14" fill="#000" opacity=".7"/>
+        <g class="laser-flicker"><use href="#mower" x="200" y="80" width="800" height="460"/></g>
+        <!-- the target -->
+        <g class="poo-run">
+          <ellipse cx="270" cy="520" rx="40" ry="8" fill="#9dff3a" opacity=".25"/>
+          <use href="#poo" x="236" y="452" width="68" height="68"/>
+        </g>
+        <g class="plus1">
+          <rect x="500" y="250" width="132" height="34" fill="#79b928"/>
+          <text x="566" y="273" text-anchor="middle" font-family="Chakra Petch,monospace" font-size="16" font-weight="600" fill="#000">+1 SMOOTHIE</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="sec" id="problem">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">The problem</p>
+      <h2>Engineered for the 4.2 billion<sup><a href="#n3">3</a></sup> deposits left on lawns every day.</h2>
+      <p class="sub">Dogs don't stop. Neither does Govnokosilka. Where conventional mowers spread the problem across your lawn in a fine, even paste, we saw an untapped nutritional supply chain.</p>
+      <div class="facts">
+        <div><div class="stat">0.33<span style="font-size:.5em">kg</span></div><p>Average daily output of one Labrador. Roughly one smoothie.</p></div>
+        <div><div class="stat">73%</div><p>of mower owners have run over one. The other 27% are lying.</p></div>
+        <div><div class="stat">11<span style="font-size:.5em">sec</span></div><p>Lawn to glass. Faster than you can say "is that…?"</p></div>
+        <div><div class="stat">0<span style="font-size:.5em">g</span></div><p>of animal ingredients.<sup><a href="#n4">4</a></sup> Just what came out of one.</p></div>
+      </div>
+    </div>
+    <figure class="fig rv" aria-label="Technical drawing of a dog squatting on a lawn">
+      <svg viewBox="0 0 500 380" role="img">
+        <defs><pattern id="gridp" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#eee" stroke-width="1"/></pattern>
+          <marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#999"/></marker></defs>
+        <rect width="500" height="380" fill="url(#gridp)"/>
+        <line x1="0" y1="336" x2="500" y2="336" stroke="#333" stroke-width="1.5"/>
+        <g stroke="#79b928" stroke-width="1.5" fill="none" stroke-linecap="round">
+          <path d="M20 336 l3 -9 M40 336 l-2 -8 M60 336 l2 -10 M250 336 l3 -9 M280 336 l-2 -8 M400 336 l2 -10 M440 336 l-3 -8 M470 336 l2 -9 M220 336 l2 -7"/>
+        </g>
+        <use href="#dog" x="0" y="0" width="500" height="400" style="color:#333;--eye:#fff" transform="translate(30 -2)"/>
+        <use href="#poo" x="140" y="296" width="44" height="44"/>
+        <ellipse cx="166" cy="308" rx="6" ry="8" fill="#6b3f1a">
+          <animate attributeName="cy" values="290;300;290" dur="1.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;1;0" dur="1.8s" repeatCount="indefinite"/>
+        </ellipse>
+        <g class="fly"><use href="#fly" x="120" y="260" width="20" height="16"/></g>
+        <g class="fly b"><use href="#fly" x="180" y="270" width="16" height="13"/></g>
+        <g class="fly c"><use href="#fly" x="150" y="240" width="14" height="11"/></g>
+        <!-- dimensions -->
+        <g stroke="#999" stroke-width="1" font-family="Chakra Petch,monospace" font-size="12" fill="#666">
+          <line x1="110" y1="296" x2="110" y2="334" marker-start="url(#ar)" marker-end="url(#ar)"/>
+          <text x="40" y="320" stroke="none">h = 18 cm</text>
+          <path d="M210 160 A120 120 0 0 1 300 150" fill="none" stroke-dasharray="3 3"/>
+          <text x="226" y="142" stroke="none">squat 37°</text>
+          <line x1="246" y1="60" x2="166" y2="290" stroke-dasharray="2 4"/>
+          <circle cx="246" cy="60" r="3" fill="#79b928" stroke="none"/>
+          <text x="254" y="58" stroke="none">TARGET ACQUIRED</text>
+          <text x="254" y="74" stroke="none" fill="#999">vol. 0.31 L · temp 38.6 °C</text>
+          <text x="20" y="30" stroke="none" fill="#999">GVK-TD-0001 · REV C</text>
+        </g>
+      </svg>
+      <figcaption><span>Fig. 1 — Deposit event. Labrador, 08:14 GMT, suburban lawn.</span><span class="mono">1:12</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ STATS BAND / CUTAWAY ============ -->
+<section class="sec black on-dark" id="technology">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Inside the G1 Detect™</p>
+      <h2>Six patented technologies.<br>One very confused dog.</h2>
+      <p class="sub">Every Govnokosilka is engineered in Wiltshire-adjacent, tested on 2,400 lawns and tasted by a man named Gennady.</p>
+    </div>
+    <div class="cutaway rv" aria-label="Cutaway diagram of the Govnokosilka with labelled components">
+      <svg viewBox="0 0 1170 600" role="img">
+        <rect y="544" width="1170" height="56" fill="url(#grassGrad)"/>
+        <rect y="530" width="1170" height="20" fill="url(#grass)" opacity=".9"/>
+        <use href="#mower" x="250" y="100" width="800" height="460"/>
+        <use href="#poo" x="300" y="502" width="44" height="44"/>
+        <!-- symbol x→scene: sx = 250 + (x+200)  ; sy = 100 + y -->
+        <g class="callout">
+          <polyline points="510,501 450,440 240,440"/><circle cx="510" cy="501" r="5"/>
+          <text x="30" y="436">Scat-Scan™ laser</text><text class="s" x="30" y="456">Reveals deposits invisible to the naked eye</text>
+
+          <polyline points="649,345 649,250 330,250"/><circle cx="649" cy="345" r="5"/>
+          <text x="30" y="246">NutriBlend™ cold-press</text><text class="s" x="30" y="266">Cold-pressed at 4 °C, preserving every nutrient that survived the dog</text>
+
+          <polyline points="750,290 750,140 330,140"/><circle cx="750" cy="290" r="5"/>
+          <text x="30" y="136">Root Poo-clone™ 14</text><text class="s" x="30" y="156">14 cyclones, 79,000 g, separating poo from grass from regret</text>
+
+          <polyline points="860,330 1150,330"/><circle cx="860" cy="330" r="5"/>
+          <text x="1150" y="320" text-anchor="end">Hyperdoodium™ motor</text><text class="s" x="1150" y="350" text-anchor="end">140,000 rpm</text>
+
+          <polyline points="973,268 1080,268 1080,120"/><circle cx="973" cy="268" r="5"/>
+          <text x="1080" y="86" text-anchor="end">Piezo-Plop™ LCD</text><text class="s" x="1080" y="106" text-anchor="end">Counts &amp; sizes every deposit</text>
+
+          <polyline points="576,372 576,302"/><circle cx="576" cy="372" r="5"/>
+          <text x="576" y="292" text-anchor="middle">Dispenser</text>
+        </g>
+      </svg>
+      <ul class="legend">
+        <li>Scat-Scan™ laser<span>Reveals deposits invisible to the naked eye</span></li>
+        <li>NutriBlend™ cold-press<span>Cold-pressed at 4 °C, preserving every nutrient that survived the dog</span></li>
+        <li>Root Poo-clone™ 14<span>14 cyclones, 79,000 g, separating poo from grass from regret</span></li>
+        <li>Hyperdoodium™ motor<span>140,000 rpm</span></li>
+        <li>Piezo-Plop™ LCD<span>Counts &amp; sizes every deposit</span></li>
+      </ul>
+    </div>
+    <div class="stats rv" style="margin-top:60px">
+      <div><div class="stat">140k<small>rpm</small></div><p>Hyperdoodium™ motor speed. Nobody asked it to go this fast.</p></div>
+      <div><div class="stat">99.97<small>%</small></div><p>of deposits captured, down to 0.3 microns. Including the ones in the shade.</p></div>
+      <div><div class="stat">4<small>× 350ml</small></div><p>Smoothies per charge. Serves a family of four. Or Gennady.</p></div>
+      <div><div class="stat">70<small>min</small></div><p>Run time. 69 minutes mowing, 1 minute of quiet reflection.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH GRID ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Technology</p>
+      <h2>Mows. Detects. Collects. Blends.</h2>
+      <p class="sub">Most mowers do one thing. That's frankly lazy.</p>
+    </div>
+    <div class="tech rv">
+      <article>
+        <svg class="ico" viewBox="0 0 44 44"><path d="M4 30 L40 22 L40 34Z" fill="#9dff3a" opacity=".5"/><circle cx="4" cy="30" r="4" fill="#79b928"/><use href="#poo" x="26" y="20" width="14" height="14"/></svg>
+        <h3>Scat-Scan™ green laser</h3>
+        <p>A precisely angled 520nm laser makes every deposit glow. Even the ones you pretended not to see.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 44 44"><rect x="4" y="6" width="36" height="28" rx="5" fill="#111"/><rect x="10" y="22" width="5" height="8" fill="#c4398d"/><rect x="17" y="16" width="5" height="14" fill="#7b4fd6"/><rect x="24" y="12" width="5" height="18" fill="#ffcc01"/><rect x="31" y="19" width="5" height="11" fill="#9dff3a"/></svg>
+        <h3>Piezo-Plop™ sensor</h3>
+        <p>Counts and sizes each deposit 15,000 times a second, then shows you the evidence. Proof of deep clean. Proof of dog.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 44 44"><g fill="none" stroke="#333" stroke-width="2"><path d="M8 8 L36 8 L26 36 L18 36Z"/><path d="M12 14 Q22 20 32 14 M14 21 Q22 26 30 21 M16 28 Q22 31 28 28"/></g></svg>
+        <h3>Root Poo-clone™ 14</h3>
+        <p>Fourteen concentric cyclones generate up to 79,000g, flinging grass one way and breakfast the other.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 44 44"><circle cx="22" cy="22" r="18" fill="none" stroke="#333" stroke-width="2"/><path d="M22 22 L22 6 M22 22 L36 30 M22 22 L8 30" stroke="#7b4fd6" stroke-width="3" stroke-linecap="round"/><circle cx="22" cy="22" r="4" fill="#333"/></svg>
+        <h3>Hyperdoodium™ motor</h3>
+        <p>Our smallest, fastest, most smell-tolerant motor yet. Engineered in a building with very good ventilation.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 44 44"><rect x="10" y="4" width="24" height="36" rx="4" fill="none" stroke="#333" stroke-width="2"/><rect x="12" y="20" width="20" height="18" fill="#9a6b3a"/><path d="M16 28 L28 24 M16 24 L28 28" stroke="#fff" stroke-width="2"/></svg>
+        <h3>NutriBlend™ cold-press</h3>
+        <p>Blends at 4°C with a pinch of fresh grass clippings for that just-mowed finish. No added sugar. No added anything. Please.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 44 44"><path d="M22 4 L38 10 L38 22 Q38 34 22 40 Q6 34 6 22 L6 10Z" fill="none" stroke="#333" stroke-width="2"/><path d="M15 22 L20 27 L30 16" stroke="#79b928" stroke-width="3" fill="none"/></svg>
+        <h3>Whole-machine HEPA</h3>
+        <p>Hygienic Excrement Particulate Arrestance. What goes in, stays in. Until it goes in the glass.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="sec grey">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">How it works</p>
+      <h2>From lawn to glass in five steps.</h2>
+    </div>
+    <ol class="steps rv">
+      <li><div class="n">01</div>
+        <svg viewBox="0 0 72 72"><use href="#dog" x="0" y="8" width="60" height="48" style="color:#333"/><use href="#poo" x="10" y="44" width="14" height="14"/></svg>
+        <h4>Dog does dog things</h4><p>We don't train it. We just wait.</p></li>
+      <li><div class="n">02</div>
+        <svg viewBox="0 0 72 72"><path d="M4 44 L64 56 L64 66 L4 50Z" fill="#9dff3a" opacity=".6"/><circle cx="6" cy="47" r="5" fill="#79b928"/><use href="#poo" x="42" y="38" width="24" height="24"/></svg>
+        <h4>Scat-Scan™ detects</h4><p>Green laser locks on. The deposit glows. You gasp.</p></li>
+      <li><div class="n">03</div>
+        <svg viewBox="0 0 72 72"><g fill="none" stroke="#333" stroke-width="2.5" stroke-linecap="round"><path d="M14 10 L58 10 L44 62 L28 62Z"/><path d="M20 20 Q36 30 52 20 M22 32 Q36 40 50 32 M26 44 Q36 50 46 44"/></g><circle cx="36" cy="56" r="4" fill="#5b3518"/></svg>
+        <h4>Poo-clone™ separates</h4><p>79,000g. Grass goes left. Gold goes right.</p></li>
+      <li><div class="n">04</div>
+        <svg viewBox="0 0 72 72"><rect x="16" y="6" width="40" height="60" rx="6" fill="none" stroke="#333" stroke-width="2.5"/><rect x="19" y="30" width="34" height="33" fill="#9a6b3a"/><path d="M26 46 L46 40 M26 40 L46 46" stroke="#fff" stroke-width="3" stroke-linecap="round"/><text x="36" y="22" text-anchor="middle" font-family="Chakra Petch" font-size="11" fill="#333">4°C</text></svg>
+        <h4>NutriBlend™ presses</h4><p>Cold-pressed with fresh clippings. Smooth. Very smooth.</p></li>
+      <li><div class="n">05</div>
+        <svg viewBox="0 0 72 72"><use href="#glass" x="12" y="2" width="44" height="68" style="--smoothie:#9a6b3a"/></svg>
+        <h4>You drink it</h4><p>And are cured.<sup><a href="#n1">1</a></sup> Of everything. Probably.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ LCD ============ -->
+<section class="sec">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">Piezo-Plop™ sensor</p>
+      <h2>Scientific proof of a deep clean.</h2>
+      <p class="sub">An acoustic sensor counts and sizes every deposit as it's ingested — 15,000 times a second — and displays the results live on the LCD screen. So you know exactly which neighbour's dog to thank.</p>
+      <p style="margin-top:22px"><a class="link" href="#models">Compare models with LCD</a></p>
+    </div>
+    <div class="rv">
+      <div class="lcd" role="img" aria-label="Animated LCD showing a histogram of deposits by dog size">
+        <div class="lcd-top"><span>DEPOSITS · LAST 60 MIN</span><b id="lcdMode">● SCAT-SCAN ACTIVE</b></div>
+        <div class="bars" id="bars">
+          <div class="bar"><span class="v">0</span><span class="f" style="height:10%"></span></div>
+          <div class="bar"><span class="v">0</span><span class="f" style="height:10%"></span></div>
+          <div class="bar"><span class="v">0</span><span class="f" style="height:10%"></span></div>
+          <div class="bar"><span class="v">0</span><span class="f" style="height:10%"></span></div>
+        </div>
+        <div class="bar-l"><span>CHIHUAHUA<br>&lt;5cm</span><span>BEAGLE<br>5–12cm</span><span>LABRADOR<br>12–20cm</span><span>GREAT DANE<br>&gt;20cm</span></div>
+        <div class="lcd-foot">
+          <div><div style="color:#8b8b8b;font-size:11px">SMOOTHIES READY</div><div class="big" id="smoothies">2</div></div>
+          <div style="text-align:right"><div style="color:#8b8b8b;font-size:11px">MODE</div><div id="mode" style="color:#fff">BOOST</div></div>
+          <div class="batt" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLAVOURS ============ -->
+<section class="sec grey" id="smoothies">
+  <div class="wrap flav" id="flavStage">
+    <div class="glass-stage rv" aria-label="Smoothie glass next to a mower in the selected colourway">
+      <svg viewBox="30 40 600 420"><use href="#mower" x="-200" y="0" width="800" height="460" style="--laser-on:0"/></svg>
+      <svg viewBox="0 0 200 320" style="width:62%;justify-self:center"><use href="#glass" width="200" height="320"/></svg>
+    </div>
+    <div class="rv">
+      <p class="eyebrow">Smoothies</p>
+      <h2>Four breeds.<br>Four flavours.<br>Four colourways.</h2>
+      <p class="sub">Flavour is determined entirely by your dog's breed and diet. We've matched each one with a mower finish, because we're engineers and we can't help ourselves.</p>
+      <div class="swatches" role="group" aria-label="Choose flavour">
+        <button class="sw" aria-pressed="true"  aria-label="Labrador Latte" style="--a:#c27a4a;--b:#bfc4ca" data-f="0"></button>
+        <button class="sw" aria-pressed="false" aria-label="Pug Pistachio"  style="--a:#7b4fd6;--b:#8fae4a" data-f="1"></button>
+        <button class="sw" aria-pressed="false" aria-label="Husky Blueberry" style="--a:#2f5bd3;--b:#5b4b8a" data-f="2"></button>
+        <button class="sw" aria-pressed="false" aria-label="Corgi Mango" style="--a:#e0a03a;--b:#c4398d" data-f="3"></button>
+      </div>
+      <div class="flav-name" id="fName">Labrador Latte</div>
+      <div class="flav-cw" id="fCw">Nickel/Copper finish</div>
+      <div class="flav-notes">
+        <div><span>Tasting notes</span><span id="fNotes">Caramel, kibble, wet tennis ball</span></div>
+        <div><span>Texture</span><span id="fTex">Velvety, with integrity</span></div>
+        <div><span>Pairs with</span><span id="fPair">Croissant, denial</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCIENCE ============ -->
+<section class="sec black on-dark" id="science">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">The science</p>
+      <h2>Scientifically proven<sup><a href="#n1" style="color:#79b928">1</a></sup><br>to cure cancer.</h2>
+      <p class="sub">In a rigorous, double-blind<sup><a href="#n5">5</a></sup> study at the Govnokosilka Institute of Applied Smoothie Science, 100% of participants who drank one G1 smoothie a day reported being cured of cancer. The participant was thrilled.</p>
+      <div class="chart" id="chart">
+        <div class="crow"><span>Placebo smoothie</span><div class="ctrack"><div class="cfill" data-w="2">0%</div></div></div>
+        <div class="crow"><span>Kale smoothie</span><div class="ctrack"><div class="cfill" data-w="9">3%</div></div></div>
+        <div class="crow"><span>Govnokosilka G1 smoothie</span><div class="ctrack"><div class="cfill us" data-w="100">100%</div></div></div>
+      </div>
+      <p style="font-size:12px;color:#777;margin-top:14px">Cancers cured per participant. n=1. p &lt; whatever you need it to be.</p>
+    </div>
+    <div class="rv" style="text-align:center">
+      <svg class="seal" viewBox="0 0 200 200" aria-label="Seal: Clinically proven">
+        <defs><path id="circ" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0"/></defs>
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#79b928" stroke-width="2"/>
+        <circle cx="100" cy="100" r="60" fill="#79b928"/>
+        <g class="seal-spin"><text font-family="Chakra Petch" font-size="14" letter-spacing="3.2" fill="#fff"><textPath href="#circ">CLINICALLY PROVEN · PEER REVIEWED BY PEERS · VEGAN · </textPath></text></g>
+        <use href="#poo" x="74" y="66" width="52" height="52"/>
+        <text x="100" y="140" text-anchor="middle" font-family="Chakra Petch" font-size="12" font-weight="600" fill="#000">n = 1</text>
+      </svg>
+      <blockquote style="font-size:26px;font-weight:300;max-width:440px;margin:36px auto 0;line-height:1.3">“I drank it every morning for a year. I did not get cancer once.”</blockquote>
+      <p style="color:#888;margin-top:14px;font-size:14px">— Gennady, sole trial participant, Voronezh</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODELS ============ -->
+<section class="sec" id="models">
+  <div class="wrap">
+    <div class="rv">
+      <p class="eyebrow">Choose your Govnokosilka</p>
+      <h2>Compare models.</h2>
+    </div>
+    <div class="models rv">
+      <article class="card">
+        <div class="img"><span class="pill">Entry level</span><svg viewBox="-110 30 720 430"><use href="#mower" x="-200" width="800" height="460" style="--laser-on:0;--acc:#5f6670;--acc2:#9aa0a6;--smoothie:#7a5a3a"/></svg></div>
+        <div class="body">
+          <h3>Govnokosilka G1 Origin</h3>
+          <p class="desc">Lawn mower and poo collector. For the curious.</p>
+          <ul><li>Root Poo-clone™ 14</li><li>Hyperdoodium™ motor</li><li>2 smoothies per charge</li><li class="no">Scat-Scan™ laser</li><li class="no">Piezo-Plop™ LCD</li></ul>
+          <div class="price">£499.99</div>
+          <button class="btn btn-green" data-reserve data-model="G1 Origin">Reserve</button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img"><span class="pill">Most popular</span><svg viewBox="-110 30 720 430"><use href="#mower" x="-200" width="800" height="460" style="--laser-on:1"/></svg></div>
+        <div class="body">
+          <h3>Govnokosilka G1 Detect™</h3>
+          <p class="desc">Detects what you can't see. Blends what you'd rather not.</p>
+          <ul><li>Scat-Scan™ green laser</li><li>Piezo-Plop™ LCD screen</li><li>Root Poo-clone™ 14</li><li>4 smoothies per charge</li><li class="no">Self-refrigerating cup holder</li></ul>
+          <div class="price">£749.99 <s>£899.99</s></div>
+          <button class="btn btn-green" data-reserve data-model="G1 Detect™">Reserve</button>
+        </div>
+      </article>
+      <article class="card">
+        <div class="img"><span class="pill">Only at govnokosilka.com</span><svg viewBox="-110 30 720 430"><use href="#mower" x="-200" width="800" height="460" style="--laser-on:1;--acc:#c4398d;--acc2:#d4af37;--smoothie:#5b4b8a"/></svg></div>
+        <div class="body">
+          <h3>Govnokosilka G1 Absolute Gold</h3>
+          <p class="desc">23.75-carat gold finish. For lawns that have everything.</p>
+          <ul><li>Everything in Detect™</li><li>Self-refrigerating cup holder</li><li>8 smoothies per charge</li><li>Says "bon appétit" in 14 languages</li><li>Personalised oncologist<sup><a href="#n6">6</a></sup></li></ul>
+          <div class="price">£1,199.99</div>
+          <button class="btn btn-green" data-reserve data-model="G1 Absolute Gold">Reserve</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECS ============ -->
+<section class="sec grey">
+  <div class="wrap split" style="align-items:start">
+    <div class="rv">
+      <p class="eyebrow">Specifications</p>
+      <h2>Govnokosilka G1 Detect™</h2>
+      <p class="sub">Every number verified by our engineers. Several of them by smell.</p>
+      <svg viewBox="-200 0 800 460" style="margin-top:40px"><use href="#mower" x="-200" width="800" height="460"/><use href="#poo" x="-170" y="400" width="44" height="44"/></svg>
+    </div>
+    <dl class="specs rv">
+      <div><dt>Suction power</dt><dd>230 PW (Poo Watts)</dd></div>
+      <div><dt>Cutting width</dt><dd>42 cm</dd></div>
+      <div><dt>Detection</dt><dd>Scat-Scan™ 520nm green laser</dd></div>
+      <div><dt>Separation</dt><dd>Root Poo-clone™, 14 cyclones, 79,000 g</dd></div>
+      <div><dt>Bin volume</dt><dd>0.76 L (≈ 2.3 Labradors)</dd></div>
+      <div><dt>Smoothie output</dt><dd>4 × 350 ml per charge</dd></div>
+      <div><dt>Blend temperature</dt><dd>4 °C</dd></div>
+      <div><dt>Run time</dt><dd>Up to 70 min</dd></div>
+      <div><dt>Noise</dt><dd>72 dB (mowing) · 81 dB (slurping)</dd></div>
+      <div><dt>Weight</dt><dd>24.2 kg (empty) · 24.9 kg (lunch)</dd></div>
+      <div><dt>Diet</dt><dd>Vegan<sup><a href="#n4">4</a></sup></dd></div>
+      <div><dt>Cures cancer</dt><dd>Yes<sup><a href="#n1">1</a></sup></dd></div>
+      <div><dt>Warranty</dt><dd>2 years parts &amp; labour. 0 years smell.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="rv-head rv">
+      <div>
+        <p class="eyebrow">Reviews</p>
+        <h2>What owners are saying.</h2>
+      </div>
+      <div class="rv-score"><span class="stat">4.9</span><div><div class="stars" style="font-size:20px">★★★★★</div><div style="font-size:14px;color:var(--ink-2)">12,483 ratings<sup><a href="#n2">2</a></sup></div></div></div>
+    </div>
+    <div class="reviews rv">
+      <article class="review"><div class="stars">★★★★★</div><h4>Not had cancer since Tuesday</h4><p>Bought it for the lawn, stayed for the oncology. My wife no longer kisses me but my scans have never been better.</p><div class="who">Gennady K. · Voronezh <span class="verified">Verified drinker</span></div></article>
+      <article class="review"><div class="stars">★★★★★</div><h4>Cleanest lawn on the street</h4><p>My lawn is spotless. My breakfast is brown. The neighbours now walk their dogs past my house on purpose, which I appreciate.</p><div class="who">Barbara T. · Croydon <span class="verified">Verified owner</span></div></article>
+      <article class="review"><div class="stars">★★★★☆</div><h4>Woof</h4><p>Woof woof. Woof? Woof woof woof. Woof. (Translated: “Hey, I was saving that.”)</p><div class="who">Rex · Labrador <span class="verified">Verified supplier</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec grey" id="faq">
+  <div class="wrap" style="max-width:1024px">
+    <div class="rv">
+      <p class="eyebrow">Support</p>
+      <h2>Frequently asked questions.</h2>
+    </div>
+    <div class="faq rv">
+      <details open><summary>How can it be vegan?</summary><p>Dogs eat grass. The Govnokosilka collects what the dog made of the grass. We simply cut out the middleman. Technically the middleman is the dog. Our lawyers say this counts.<sup><a href="#n4">4</a></sup></p></details>
+      <details><summary>What does “Govnokosilka” mean?</summary><p>Говнокосилка, from Russian: <em>govno</em> (we'd rather not say) + <em>kosilka</em> (mower). Our naming agency charged £2.1m and has since gone quiet.</p></details>
+      <details><summary>What does it taste like?</summary><p>It tastes of engineering. Owners describe notes of caramel, freshly cut grass and courage. Flavour varies by breed — see <a class="link" href="#smoothies">Smoothies</a>.</p></details>
+      <details><summary>Does it still mow grass?</summary><p>Yes, as a secondary function. Clippings are added to each smoothie for fibre and that just-mowed finish.</p></details>
+      <details><summary>What about cats?</summary><p>The Govnokosilka respects a cat's privacy. A dedicated cat module, the KotoKosilka™, is in development for 2028.</p></details>
+      <details><summary>I don't have a dog. Can I still use it?</summary><p>Yes. Our Deposit-as-a-Service subscription delivers a certified Labrador to your lawn twice a week. Lab not included in the box. Lab not returnable.</p></details>
+      <details><summary>When will it ship?</summary><p>Reservations open now; deliveries begin spring 2027. Reserving is free and you can cancel any time — although, medically speaking, why would you?</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WAITLIST ============ -->
+<section class="sec black on-dark" id="reserve">
+  <div class="wrap wl">
+    <div class="rv">
+      <p class="eyebrow">Reservations open</p>
+      <h2>Be first in line.<br>Be first in good health.<sup><a href="#n1" style="color:#79b928">1</a></sup></h2>
+      <form id="wlForm" novalidate>
+        <label for="wlEmail" class="sr" style="position:absolute;left:-9999px">Email address</label>
+        <input id="wlEmail" type="email" placeholder="Email address" autocomplete="email" required>
+        <button class="btn btn-green" type="submit">Join the waitlist</button>
+      </form>
+      <div class="ok" id="wlOk" role="status"></div>
+      <small>We'll only email you about Govnokosilka. And the occasional dog.</small>
+    </div>
+    <div class="rv"><svg viewBox="0 -40 1000 540" role="img" aria-label="A dog squatting on a lawn next to the Govnokosilka">
+      <rect y="420" width="1000" height="80" fill="url(#grassGrad)"/>
+      <rect y="406" width="1000" height="22" fill="url(#grass)"/>
+      <use href="#dog" x="-10" y="148" width="370" height="296" style="color:#e9e9e9;--eye:#000"/>
+      <use href="#poo" x="94" y="384" width="44" height="44"/>
+      <use href="#mower" x="300" y="-20" width="760" height="437"/>
+    </svg></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div><a class="logo" href="#">govnokosilka<b>.</b></a><p style="margin-top:14px;max-width:280px">Engineered to pick up after everyone.</p></div>
+      <div><h5>Products</h5><ul><li><a href="#models">G1 Origin</a></li><li><a href="#models">G1 Detect™</a></li><li><a href="#models">G1 Absolute Gold</a></li><li><a href="#faq">KotoKosilka™ (2028)</a></li></ul></div>
+      <div><h5>Support</h5><ul><li><a href="#faq">FAQs</a></li><li><a href="#faq">Register your dog</a></li><li><a href="#faq">Spare cups</a></li><li><a href="#faq">Odour helpline</a></li></ul></div>
+      <div><h5>About</h5><ul><li><a href="#science">Our science</a></li><li><a href="#science">Meet Gennady</a></li><li><a href="#problem">Sustainability</a></li><li><a href="#top">Careers (nose required)</a></li></ul></div>
+      <div><h5>Follow</h5><ul><li><a href="#top">Instagram</a></li><li><a href="#top">TikTok</a></li><li><a href="#top">YouTube</a></li><li><a href="#top">Smell-O-Vision</a></li></ul></div>
+    </div>
+    <div class="notes">
+      <ol>
+        <li id="n1">Govnokosilka Institute of Applied Smoothie Science, internal study, 2026. n = 1 (Gennady). Gennady did not have cancer before the study either.</li>
+        <li id="n2">Ratings collected from people who had already finished their smoothie and wanted it to have been worth it.</li>
+        <li id="n3">Estimate. We counted one lawn and multiplied.</li>
+        <li id="n4">Contains no animal ingredients. Contains 100% of an animal's output. Vegan certification pending; certifier has stopped answering the phone.</li>
+        <li id="n5">Participant was blindfolded. The researcher had his eyes closed.</li>
+        <li id="n6">Oncologist may be Gennady.</li>
+      </ol>
+      <div class="disclaimer"><strong>Seriously though:</strong> Govnokosilka is a concept and this page is satire. Please don't eat or drink dog faeces — it can carry parasites and bacteria, and it does not cure cancer. If you have health concerns, talk to an actual doctor. Do pick up after your dog.</div>
+    </div>
+    <div class="legal"><span>© 2026 Govnokosilka Ltd. All rights reserved. All wrongs regretted.</span><span>Privacy · Cookies (we only use vegan ones) · Terms</span></div>
+  </div>
+</footer>
+
+<!-- Reserve modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="dialog">
+    <button class="x" aria-label="Close" data-close>&times;</button>
+    <div id="mForm">
+      <span class="pill new">Free · No deposit</span>
+      <h3 id="mTitle" style="margin-top:12px">Reserve your Govnokosilka</h3>
+      <p>No payment now. We'll email you when your machine is ready to ship.</p>
+      <form id="resForm" novalidate>
+        <div class="opts">
+          <label><input type="radio" name="m" value="G1 Origin"> G1 Origin <span>£499.99</span></label>
+          <label><input type="radio" name="m" value="G1 Detect™" checked> G1 Detect™ <span>£749.99</span></label>
+          <label><input type="radio" name="m" value="G1 Absolute Gold"> G1 Absolute Gold <span>£1,199.99</span></label>
+        </div>
+        <input type="email" id="resEmail" placeholder="Email address" required autocomplete="email" aria-label="Email address">
+        <button class="btn btn-green" type="submit">Reserve now</button>
+      </form>
+    </div>
+    <div id="mDone" class="done" hidden>
+      <svg viewBox="0 0 200 320"><use href="#glass" width="200" height="320"/></svg>
+      <h3>You're on the list.</h3>
+      <p id="mDoneTxt">Your G1 Detect™ is reserved. Please start hydrating your dog.</p>
+      <button class="btn btn-dark" data-close>Continue browsing</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"><span style="color:var(--green)">●</span><span id="toastTxt"></span></div>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Sticky product bar appears once the hero is out of view
+  const pbar = $('#pbar');
+  new IntersectionObserver(([e]) => pbar.classList.toggle('show', !e.isIntersecting), { rootMargin: '-64px 0px 0px 0px' })
+    .observe($('.hero'));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .12 });
+  $$('.rv').forEach(el => io.observe(el));
+
+  // Science chart animates when visible
+  new IntersectionObserver(([e], o) => {
+    if (!e.isIntersecting) return;
+    $$('#chart .cfill').forEach(f => f.style.width = f.dataset.w + '%');
+    o.disconnect();
+  }, { threshold: .4 }).observe($('#chart'));
+
+  // Piezo-Plop LCD
+  const bars = $$('#bars .bar');
+  const counts = [3, 7, 12, 2];
+  let smoothies = 2;
+  const modes = ['BOOST', 'AUTO', 'ECO', 'BOOST', 'GOURMET'];
+  function tick() {
+    const i = Math.floor(Math.random() * 4);
+    counts[i] += 1 + Math.floor(Math.random() * 2);
+    const max = Math.max(...counts);
+    bars.forEach((b, j) => {
+      $('.v', b).textContent = counts[j];
+      $('.f', b).style.height = Math.max(6, counts[j] / max * 78) + '%';
+    });
+    if (Math.random() < .35) $('#smoothies').textContent = ++smoothies;
+    if (Math.random() < .15) $('#mode').textContent = modes[Math.floor(Math.random() * modes.length)];
+    if (counts.reduce((a, b) => a + b) > 120) counts.forEach((_, k) => counts[k] = Math.ceil(counts[k] / 4));
+  }
+  tick();
+  if (!reduced) setInterval(tick, 1300);
+
+  // Flavour / colourway picker
+  const flavours = [
+    { n: 'Labrador Latte',  cw: 'Nickel/Copper finish',  acc: '#7b4fd6', acc2: '#c27a4a', s: '#9a6b3a', notes: 'Caramel, kibble, wet tennis ball', tex: 'Velvety, with integrity', pair: 'Croissant, denial' },
+    { n: 'Pug Pistachio',   cw: 'Purple/Iron finish',     acc: '#7b4fd6', acc2: '#5f6670', s: '#8fae4a', notes: 'Pistachio, lawn, faint wheeze', tex: 'Compact, surprisingly dense', pair: 'Sourdough, therapy' },
+    { n: 'Husky Blueberry', cw: 'Prussian Blue/Nickel',   acc: '#2f5bd3', acc2: '#bfc4ca', s: '#5b4b8a', notes: 'Blueberry, snow, drama', tex: 'Fluffy. Sheds.', pair: 'Pancakes, howling' },
+    { n: 'Corgi Mango',     cw: 'Fuchsia/Gold finish',    acc: '#c4398d', acc2: '#d9a441', s: '#e0a03a', notes: 'Mango, royal biscuit, low ambition', tex: 'Short, but confident', pair: 'Scones, the monarchy' },
+  ];
+  const stage = $('#flavStage');
+  function setFlavour(k) {
+    const f = flavours[k];
+    stage.style.setProperty('--acc', f.acc);
+    stage.style.setProperty('--acc2', f.acc2);
+    stage.style.setProperty('--smoothie', f.s);
+    $('#fName').textContent = f.n; $('#fCw').textContent = f.cw;
+    $('#fNotes').textContent = f.notes; $('#fTex').textContent = f.tex; $('#fPair').textContent = f.pair;
+    $$('.sw').forEach(b => b.setAttribute('aria-pressed', b.dataset.f == k));
+  }
+  $$('.sw').forEach(b => b.addEventListener('click', () => setFlavour(+b.dataset.f)));
+  setFlavour(0);
+
+  // Toast
+  let tt;
+  function toast(msg) {
+    $('#toastTxt').textContent = msg;
+    $('#toast').classList.add('show');
+    clearTimeout(tt); tt = setTimeout(() => $('#toast').classList.remove('show'), 3200);
+  }
+
+  // Basket count
+  let bag = 0;
+  function addToBag() { bag++; const c = $('#bagCount'); c.textContent = bag; c.classList.add('on'); }
+
+  // Reserve modal (front-end only — wire to your backend later)
+  const modal = $('#modal');
+  const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  function openModal(model) {
+    $('#mForm').hidden = false; $('#mDone').hidden = true;
+    if (model) $$('#resForm input[name=m]').forEach(r => r.checked = r.value === model);
+    modal.classList.add('open');
+    setTimeout(() => $('#resEmail').focus(), 50);
+  }
+  function closeModal() { modal.classList.remove('open'); }
+  $$('[data-reserve]').forEach(b => b.addEventListener('click', () => openModal(b.dataset.model)));
+  modal.addEventListener('click', e => { if (e.target === modal || e.target.closest('[data-close]')) closeModal(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  $('#resForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const em = $('#resEmail');
+    if (!validEmail(em.value)) { em.style.borderColor = '#da2f47'; em.focus(); return; }
+    em.style.borderColor = '';
+    const m = $('#resForm input[name=m]:checked').value;
+    $('#mDoneTxt').textContent = `Your ${m} is reserved. Please start hydrating your dog.`;
+    $('#mForm').hidden = true; $('#mDone').hidden = false;
+    addToBag();
+    em.value = '';
+  });
+
+  // Waitlist
+  $('#wlForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const em = $('#wlEmail');
+    if (!validEmail(em.value)) { $('#wlOk').style.color = '#ff6b7d'; $('#wlOk').textContent = 'That doesn\'t look like an email address.'; return; }
+    $('#wlOk').style.color = ''; $('#wlOk').textContent = '✓ You\'re on the list. We\'ll be in touch before your dog is.';
+    em.value = '';
+    toast('Welcome to the Govnokosilka waitlist');
+  });
+
+  $('.burger').addEventListener('click', () => toast('Menu coming soon. Like the KotoKosilka™.'));
+})();
+</script>
+</body>
+</html>
